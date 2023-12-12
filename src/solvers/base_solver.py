@@ -1,4 +1,6 @@
-from abc import ABC
+from abc import ABC, abstractmethod
+
+from src.sudoku import Sudoku
 
 
 class Solver(ABC):
@@ -9,4 +11,6 @@ class Solver(ABC):
     def name(self):
         return self._name
 
-    def solve_sudoku(self, sudoku_matrix:Sudoku) -> Sudoku:
+    @abstractmethod
+    def solve_sudoku(self, sudoku:Sudoku) -> Sudoku:
+        raise NotImplementedError("Please Implement this method")
